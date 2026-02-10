@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Absensi - IT TEAM JUNIOR</title>
+<link rel="stylesheet" href="body {.css">
+</head>
+<body>
+
+<header>
+    <h1>Form Absensi</h1>
+    <nav>
+        <a href="halaman 1.html">Beranda</a>
+        <a href="absen.html">Absen</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Isi Absensi</h2>
+
+    <form>
+        <label>Nama</label>
+        <input type="text" id="nama" required>
+
+        <label>Kelas</label>
+        <input type="text" id="kelas" required>
+
+        <label>Tanggal</label>
+        <input type="date" id="tanggal" required>
+
+        <button type="button" onclick="kirimWA()">Kirim ke WhatsApp</button>
+    </form>
+</div>
+
+<script>
+function kirimWA() {
+
+    // GANTI NOMOR TUJUAN
+    let nomor = "6287777818396";
+
+    let nama = document.getElementById("nama").value;
+    let kelas = document.getElementById("kelas").value;
+    let tanggal = document.getElementById("tanggal").value;
+
+    let pesan = `Absensi IT TEAM JUNIOR:%0A
+Nama: ${nama}%0A
+Kelas: ${kelas}%0A
+Tanggal: ${tanggal}`;
+
+    let url = `https://wa.me/${nomor}?text=${pesan}`;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
